@@ -1,1 +1,118 @@
+roposta de Intervenção Técnica e Ética
+## O Dilema da IA Contratadora
 
+---
+
+## 1. Análise do Problema
+
+O sistema de inteligência artificial desenvolvido apresenta *viés algorítmico*, favorecendo determinados perfis demográficos e discriminando grupos minoritários.  
+
+Esse problema decorre do uso de *dados históricos enviesados*, o que compromete a equidade do processo de seleção.
+
+Além disso, há pressão organizacional para lançamento rápido, criando um conflito entre:
+- Qualidade técnica e ética
+- Interesses financeiros e responsabilidade social
+
+---
+
+## 2. Análise Ética (ACM/IEEE)
+
+### Cláusula 1.03 – Honestidade
+Os profissionais devem ser transparentes sobre limitações e riscos do sistema.
+
+*Aplicação no caso:*
+- A equipe identificou o viés e comunicou o problema
+- Lançar o sistema sem correção violaria essa cláusula
+
+---
+
+### Cláusula 3.01 – Qualidade do Produto
+Os engenheiros devem garantir que o software atenda padrões adequados de qualidade.
+
+*Aplicação no caso:*
+- Um sistema que discrimina não atende aos requisitos de qualidade
+- O viés compromete a confiabilidade e justiça do software
+
+---
+
+## 3. Risco Jurídico (LGPD)
+
+De acordo com o Art. 20 da LGPD:
+
+- Usuários podem solicitar revisão de decisões automatizadas
+- O sistema atual pode gerar:
+  - Processos judiciais
+  - Multas significativas
+  - Danos à reputação da empresa
+
+---
+
+## 4. Comparação de Soluções Técnicas
+
+| Solução                  | Vantagens                                                                 | Desvantagens                                                                 |
+|-------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| Lançar como está        | Sem atraso, retorno imediato                                             | Alto risco jurídico, discriminação, danos à imagem                           |
+| Human-in-the-loop       | Reduz decisões injustas, mantém controle humano                         | Aumenta custo operacional e tempo de análise                                 |
+| XAI (Explicabilidade)   | Transparência, alinhamento com LGPD                                     | Pode expor lógica interna e segredos do sistema                              |
+| Auditoria de Dados      | Reduz viés na raiz do problema                                          | Atraso de 4 semanas e custo adicional                                        |
+
+---
+
+## 5. Análise Financeira
+
+### Cenário 1 – Lançamento imediato
+- Possível economia de curto prazo
+- Risco de:
+  - Multas da LGPD
+  - Processos judiciais em massa
+  - Perda de clientes e credibilidade
+
+### Cenário 2 – Atraso de 4 semanas (Auditoria)
+- Custo adicional controlado
+- Redução significativa de riscos legais
+- Melhoria da qualidade do produto
+
+*Conclusão financeira:*
+O custo de um processo judicial e danos reputacionais é potencialmente muito maior do que o atraso de 4 semanas.
+
+---
+
+## 6. Proposta de Solução (Abordagem Recomendada)
+
+A melhor estratégia é uma *solução combinada*, integrando técnica e ética:
+
+### ✔️ Auditoria de Dados (prioritário)
+- Corrigir o viés na origem
+- Reduzir discriminação algorítmica
+
+### ✔️ Human-in-the-loop
+- Garantir revisão humana em casos críticos
+- Evitar decisões automatizadas injustas
+
+### ✔️ Implementação parcial de XAI
+- Aumentar transparência
+- Atender requisitos da LGPD
+
+---
+
+## 7. Justificativa da Solução
+
+Essa abordagem:
+
+- Atende às exigências legais da LGPD  
+- Reduz riscos jurídicos e financeiros  
+- Garante maior justiça no processo de seleção  
+- Mantém a viabilidade do produto no mercado  
+- Demonstra responsabilidade ética da empresa  
+
+---
+
+## 8. Conclusão
+
+A solução proposta equilibra *eficiência, ética e conformidade legal*.
+
+Lançar o sistema sem correções seria uma decisão tecnicamente inadequada e eticamente irresponsável.  
+
+A adoção de uma abordagem híbrida permite mitigar riscos, melhorar a qualidade do software e preservar a reputação da empresa no longo prazo.
+
+---
