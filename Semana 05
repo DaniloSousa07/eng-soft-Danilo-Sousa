@@ -1,1 +1,50 @@
-
+Atividade Engenharia de Software 
+Victor Emanuel de Souza
+Danilo Rodrigues 
+Alexsandro 
+David Ribeiro
+Semana 05 
+Cliente: David 
+Eu quero um aplicativo para uma academia.
+O projeto precisa de uma tela de login para aluno individual, uma área para cadastro de aluno, área 
+para visualizar modelo de treino, área para visualizar mensalidade e os exercícios do dia.
+Eu como usuário preciso ter acesso a treinos, exercícios, mensalidade.
+Eu como administrador preciso ter acesso a uma área com todos os alunos cadastrados, 
+mensalidades atrasadas, reposição de produtos, informações dos alunos cadastrados, área para 
+acompanhar os exames trimestrais.
+História do Usuário
+• Como aluno, quero fazer login no sistema para acessar minhas informações. 
+• Como aluno, quero visualizar meus treinos para saber o que devo fazer. 
+• Como aluno, quero ver os exercícios do dia para acompanhar minha rotina. 
+• Como aluno, quero consultar minha mensalidade para saber se está paga ou 
+pendente.
+Administrador 
+• Como administrador, quero cadastrar alunos para gerenciar a academia. 
+• Como administrador, quero visualizar todos os alunos cadastrados para controle 
+geral. 
+• Como administrador, quero ver mensalidades atrasadas para cobrança. 
+• Como administrador, quero controlar reposição de produtos para manter o estoque. 
+• Como administrador, quero acessar informações dos alunos para acompanhamento.
+• Como administrador, quero acompanhar exames trimestrais para monitorar a saúde 
+dos alunos.
+Aplicando o Método Card
+C-Capture (Capturar)
+As necessidades foram capturadas a partir da conversa com o cliente:
+✔ Login de aluno
+✔ Cadastro de alunos
+✔ Visualização de treinos e exercícios
+✔ Controle de mensalidade
+✔ Gestão administrativa (alunos, produtos, exames)
+A - Approve (Aprovar)
+Após validação com o cliente:
+✔ Todas as funcionalidades foram consideradas importantes
+✔ O sistema deve atender alunos e administradores
+✔ Prioridade inicial:
+• Login 
+• Cadastro de alunos 
+• Visualização de treinos 
+R – Refine (Refinar- sem detalhar muito)
+As histórias foram organizadas e separadas por tipo de usuário:
+• Aluno: acesso e visualização 
+• Administrador: controle e gestão 
+(Detalhamento técnico será feito depois
