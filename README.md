@@ -24,7 +24,7 @@ Clique nos links abaixo para acessar os arquivos de cada semana:
 * [Semana 04 - (Nome do tópico futuro) ](./semana-03)
 * [Semana 05 - (Nome do tópico futuro) ](./semana-03)
 * [Semana 06 - (Nome do tópico futuro) ](./semana-03)
-* [Semana 12 - (Projeto-final-etapa01) ](./Semana12)
+* [Semana 12 - (Projeto-final-etapa01) ](./Semana12/projeto-etapa-1.md)
 
 ---
 
