@@ -1,0 +1,225 @@
+📋 Documento de Especificação de Requisitos de Software (ERS)
+
+
+Projeto: Sistema de Gestão Hoteleira — Hotel Bela Vista
+
+Versão: 1.0
+
+Cliente: Sr. Geraldo (Proprietário — Hotel Bela Vista)
+
+Analista: Danilo
+
+Data: 02/04/2026
+
+Status: Aguardando Validação do Cliente
+
+
+
+
+Histórico de Revisões
+
+VersãoDataAutorDescrição1.002/04/2026DaniloVersão inicial após entrevista com o cliente
+
+
+Sumário
+
+
+Introdução
+Descrição Geral do Sistema
+Escopo
+Histórias de Usuário
+Requisitos Funcionais
+Requisitos Não Funcionais
+Regras de Negócio
+Arquitetura do Sistema
+Modelo de Dados
+Restrições e Premissas
+Critérios de Aceitação
+
+
+
+1. Introdução
+
+1.1 Propósito
+
+Este documento especifica os requisitos de software para o Sistema de Gestão Hoteleira do Hotel Bela Vista. Seu objetivo é estabelecer um acordo formal entre o cliente (Sr. Geraldo) e a equipe de desenvolvimento, descrevendo com precisão o que o sistema deve fazer, como deve se comportar e quais restrições deve respeitar.
+
+1.2 Público-Alvo
+
+
+Sr. Geraldo — proprietário do hotel, responsável pela validação dos requisitos
+Equipe de desenvolvimento — responsável pela implementação
+Camareiras e recepcionistas — usuários finais do sistema
+
+
+1.3 Definições e Siglas
+
+TermoDefiniçãoCheck-inProcesso de entrada e registro oficial do hóspede no hotelCheckoutProcesso de saída do hóspede com fechamento da contaOverbookingSituação em que um mesmo quarto é reservado para dois hóspedes no mesmo períodoMapa de OcupaçãoPainel visual com o status de todos os quartos do hotelConsumo ExtraItens cobrados além da diária (frigobar, lanches, serviços)ERSEspecificação de Requisitos de SoftwareRFRequisito FuncionalRNFRequisito Não FuncionalRNRegra de Negócio
+
+
+2. Descrição Geral do Sistema
+
+O Sistema de Gestão Hoteleira do Hotel Bela Vista é uma aplicação desktop (ou web interna) destinada a automatizar e centralizar as operações diárias do hotel, eliminando o uso de planilhas e anotações manuais.
+
+O sistema atenderá principalmente ao proprietário (para gestão e relatórios) e às camareiras/recepcionistas (para controle de limpeza e check-in/checkout).
+
+2.1 Contexto do Negócio
+
+Atualmente, o Hotel Bela Vista realiza o controle de reservas, hóspedes e consumo de forma manual (cadernos ou planilhas). Esse processo está sujeito a erros, perda de informação e dificuldade de gestão financeira. O sistema proposto visa resolver esses problemas de forma simples e acessível para usuários com baixo conhecimento técnico.
+
+
+3. Escopo
+
+✅ O que o sistema IRARÁ fazer (dentro do escopo)
+
+
+Cadastro e consulta de hóspedes
+Gerenciamento de reservas com bloqueio de overbooking
+Mapa visual de ocupação dos quartos em tempo real
+Registro de consumo extra na conta do hóspede
+Cálculo automático do valor total da hospedagem
+Alertas de limpeza após checkout
+Relatório financeiro mensal de faturamento e lucro
+
+
+❌ O que o sistema NÃO irará fazer (fora do escopo)
+
+
+Integração com plataformas externas de reserva (Booking.com, Airbnb, etc.)
+Aplicativo mobile para hóspedes
+Controle de estoque do frigobar ou restaurante
+Sistema de ponto eletrônico para funcionários
+Emissão de nota fiscal ou integração com sistema contábil
+Gestão de múltiplas unidades hoteleiras
+
+
+
+Nota: Itens fora do escopo poderão ser considerados em versões futuras do sistema, mediante novo levantamento de requisitos.
+
+
+
+
+4. Histórias de Usuário (User Stories)
+
+IDUsuárioDesejoPrioridadeUS01ProprietárioVer um mapa visual dos quartos (livre, ocupado, limpeza) para gerir a ocupação rapidamente.🔴 AltaUS02ProprietárioCadastrar hóspedes com Nome, CPF e Telefone para manter um histórico de contatos.🔴 AltaUS03ProprietárioRegistrar o tipo de quarto (Simples, Luxo, Família) com seus respectivos preços automáticos.🔴 AltaUS04ProprietárioLançar despesas extras (frigobar/lanches) na conta do hóspede durante a estadia.🟡 MédiaUS05ProprietárioVisualizar um relatório de lucros mensais sem necessidade de cálculos manuais.🔴 AltaUS06Camareira/AdminReceber alertas/avisos de quais quartos precisam de limpeza após o checkout.🟡 Média
+
+
+5. Requisitos Funcionais
+
+5.1 Módulo de Hóspedes
+
+IDDescriçãoPrioridadeUser StoryRF01O sistema deve permitir o cadastro de hóspedes com os campos obrigatórios: Nome completo, CPF e Telefone.AltaUS02RF02O sistema deve permitir a consulta e edição dos dados cadastrais de hóspedes já registrados.AltaUS02RF03O sistema deve impedir o cadastro duplicado de hóspedes com o mesmo CPF.AltaUS02
+
+5.2 Módulo de Quartos e Reservas
+
+IDDescriçãoPrioridadeUser StoryRF04O sistema deve permitir o cadastro de quartos com número, tipo (Simples, Suíte Luxo, Quarto Família) e valor da diária correspondente.AltaUS03RF05O sistema deve permitir a reserva de quartos, associando um hóspede a um quarto com datas de check-in e checkout.AltaUS01RF06O sistema deve bloquear overbooking, impedindo que um quarto seja reservado por dois hóspedes no mesmo período.AltaUS01RF07O sistema deve exibir um Mapa de Ocupação visual com o status de cada quarto: Livre (verde), Ocupado (vermelho) ou Em Limpeza (amarelo).AltaUS01
+
+5.3 Módulo de Consumo e Conta
+
+IDDescriçãoPrioridadeUser StoryRF08O sistema deve permitir o lançamento de itens de consumo extra (frigobar, lanches, etc.) na conta do hóspede durante a estadia.MédiaUS04RF09O sistema deve calcular automaticamente o valor total da conta do hóspede: (diária × número de dias) + consumo extra.AltaUS03RF10O sistema deve exibir o resumo da conta do hóspede antes de confirmar o checkout.AltaUS03
+
+5.4 Módulo de Checkout e Limpeza
+
+IDDescriçãoPrioridadeUser StoryRF11O sistema deve bloquear o checkout enquanto houver itens de consumo extra não confirmados na conta.AltaUS04RF12Após a confirmação do checkout, o sistema deve gerar automaticamente um alerta de limpeza para o quarto liberado.MédiaUS06RF13O sistema deve permitir que a camareira confirme a limpeza do quarto, alterando seu status para "Livre".MédiaUS06
+
+5.5 Módulo de Relatórios
+
+IDDescriçãoPrioridadeUser StoryRF14O sistema deve gerar um relatório financeiro mensal com total de reservas, faturamento bruto e receita de consumo extra.AltaUS05RF15O relatório deve permitir filtro por mês e ano para consulta de períodos anteriores.MédiaUS05
+
+
+6. Requisitos Não Funcionais
+
+IDCategoriaDescriçãoRNF01UsabilidadeA interface deve ser extremamente simples e intuitiva, adequada para usuários com zero conhecimento técnico. Toda ação principal deve ser acessível com no máximo 3 cliques.RNF02ConfiabilidadeO sistema deve garantir a persistência dos dados. Nenhuma informação registrada pode ser perdida por falha de software. O sistema deve realizar backup automático dos dados a cada 24 horas.RNF03PerformanceO processo de check-in completo deve ser concluído em menos de 2 minutos. O Mapa de Ocupação deve carregar em menos de 3 segundos.RNF04SegurançaO acesso ao sistema deve ser protegido por login e senha. O proprietário e as camareiras devem ter perfis de acesso com permissões distintas.RNF05DisponibilidadeO sistema deve estar disponível durante todo o horário de funcionamento do hotel (24h/dia), tolerando no máximo 1 hora de indisponibilidade por mês.RNF06ManutenibilidadeO código deve ser documentado e organizado de forma que um novo desenvolvedor consiga compreender e realizar alterações sem necessidade de reescrita total.
+
+
+7. Regras de Negócio
+
+IDDescriçãoRN01O preço da diária é definido pela categoria do quarto: Simples, Suíte Luxo ou Quarto Família. O valor de cada categoria é configurável pelo proprietário.RN02Um quarto só pode ter seu status alterado para "Livre" após a confirmação da limpeza pela camareira responsável.RN03O checkout só pode ser finalizado após o fechamento e confirmação de toda a conta de consumo extra do hóspede.RN04O CPF é o identificador único do hóspede no sistema. Não podem existir dois cadastros com o mesmo CPF.RN05O cálculo da hospedagem é feito com base na quantidade de dias entre o check-in e o checkout multiplicada pelo valor da diária do quarto.
+
+
+8. Arquitetura do Sistema
+
+O sistema seguirá uma arquitetura em 3 camadas (Three-Tier Architecture), adequada para uma aplicação de gestão interna de pequeno porte:
+
+┌─────────────────────────────────────────┐
+│         CAMADA DE APRESENTAÇÃO          │
+│   (Interface gráfica — telas e menus)   │
+│   Mapa de Ocupação, Formulários,        │
+│   Relatórios                            │
+└────────────────────┬────────────────────┘
+                     │
+┌────────────────────▼────────────────────┐
+│          CAMADA DE NEGÓCIO              │
+│   (Regras e lógica da aplicação)        │
+│   Cálculo de diárias, Validação de      │
+│   overbooking, Geração de relatórios    │
+└────────────────────┬────────────────────┘
+                     │
+┌────────────────────▼────────────────────┐
+│           CAMADA DE DADOS               │
+│   (Persistência e banco de dados)       │
+│   Hóspedes, Quartos, Reservas,          │
+│   Consumo, Relatórios                   │
+└─────────────────────────────────────────┘
+
+8.1 Tecnologias Sugeridas (a confirmar com a equipe)
+
+ComponenteOpção SugeridaInterfaceAplicação Web (HTML/CSS/JS) ou Desktop (Python + Tkinter)Backend / RegrasPython (Flask) ou Node.jsBanco de DadosSQLite (simplicidade) ou PostgreSQL (escalabilidade)HospedagemLocal (servidor interno do hotel) ou nuvem básica
+
+
+9. Modelo de Dados (Simplificado)
+
+As principais entidades do sistema e seus relacionamentos:
+
+HÓSPEDE               RESERVA               QUARTO
+─────────             ─────────             ──────────
+id (PK)         1───N id (PK)         N───1 id (PK)
+nome                  data_checkin          numero
+cpf (único)           data_checkout         tipo
+telefone              hóspede_id (FK)       preco_diaria
+                      quarto_id (FK)        status
+                      valor_total
+                          │
+                          │ 1
+                          │
+                        N │
+                    CONSUMO_EXTRA
+                    ─────────────
+                    id (PK)
+                    reserva_id (FK)
+                    descricao
+                    valor
+                    data_lancamento
+
+
+10. Restrições e Premissas
+
+Restrições
+
+
+O sistema deve funcionar em computadores com configuração básica (já existentes no hotel)
+O orçamento é limitado — soluções de código aberto são preferidas
+O hotel não possui equipe de TI interna; o sistema deve ser de fácil manutenção
+
+
+Premissas
+
+
+O hotel possui conexão com internet estável para eventual acesso remoto
+O Sr. Geraldo e sua equipe participarão de uma sessão de treinamento antes do go-live
+Os valores de diária por categoria de quarto serão fornecidos pelo cliente antes do desenvolvimento
+
+
+
+11. Critérios de Aceitação
+
+O sistema será considerado pronto para entrega quando:
+
+#Critério1O cadastro de hóspede com CPF duplicado for bloqueado com mensagem de erro clara2O Mapa de Ocupação refletir corretamente o status de todos os quartos em tempo real3Uma tentativa de reservar quarto ocupado for bloqueada pelo sistema4O checkout for impedido enquanto houver conta de consumo em aberto5O status do quarto só mudar para "Livre" após confirmação de limpeza6O relatório mensal apresentar faturamento correto com base nas reservas e consumos do período7Um usuário sem conhecimento técnico conseguir realizar um check-in completo em menos de 2 minutos
+
+
+📁 Repositório: semana-08/documento-requisitos.md
+
+🗓️ Atividade: Especificação de Requisitos — Engenharia de Software
+
+✍️ Analista: Danilo | Cliente: Sr. Geraldo (Hotel Bela Vista)
