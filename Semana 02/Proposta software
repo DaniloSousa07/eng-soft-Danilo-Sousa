@@ -1,0 +1,192 @@
+# 🤖 O Dilema da IA Contratadora — Proposta de Intervenção Técnica e Ética
+
+> **Curso:** Tecnologia em Sistemas para Internet  
+> **Módulo:** 3 | **Data:** 03/03/2026  
+> **Componente Curricular:** Engenharia de Software  
+> **Professor:** Gaio B. Oliveira  
+> **Atividade:** Semana 02 — Proposta de Intervenção Técnica e Ética
+
+---
+
+## 📋 Sumário
+
+1. [Análise do Cenário](#1-análise-do-cenário)
+2. [Fundamentação Ética — Código ACM/IEEE e Sommerville](#2-fundamentação-ética)
+3. [Análise das Opções Técnicas](#3-análise-das-opções-técnicas)
+4. [Impacto Financeiro: Risco Jurídico vs. Atraso Técnico](#4-impacto-financeiro)
+5. [Nossa Proposta de Intervenção](#5-nossa-proposta-de-intervenção)
+6. [Conclusão](#6-conclusão)
+
+---
+
+## 1. Análise do Cenário
+
+A startup desenvolveu um sistema de IA para triagem de currículos que, ao ser testado com dados históricos reais de contratações, **replicou e amplificou vieses discriminatórios** presentes nesses dados. O algoritmo passou a favorecer perfis demográficos específicos, penalizando grupos minoritários ou sub-representados — mesmo que de forma não intencional.
+
+O problema central é o seguinte conflito de forças:
+
+| Pressão | Origem | Consequência se ignorada |
+|---|---|---|
+| ⚡ Lançar rápido | Investidores e concorrência | Perda de market share |
+| ⚖️ Corrigir o viés | Equipe de engenharia | Multas, processos, danos à reputação |
+| 🔒 Conformidade LGPD | Obrigação legal (Art. 20) | Sanções administrativas e judiciais |
+| 🫂 Responsabilidade social | Ética profissional | Danos concretos a candidatos reais |
+
+> **Diagnóstico:** Não se trata de uma escolha entre "lançar" ou "não lançar". Trata-se de **como** lançar de forma responsável sem comprometer a viabilidade do negócio.
+
+---
+
+## 2. Fundamentação Ética
+
+### 2.1 Código de Ética ACM/IEEE
+
+#### Cláusula 1.03 — Aprovação do Público
+> *"Os engenheiros de software devem aprovar software apenas se acreditarem que é seguro [...] e que não diminuirá a qualidade de vida, diminuirá a privacidade ou causará danos ao meio ambiente."*
+
+**Aplicação:** Lançar o software com viés conhecido é uma violação direta desta cláusula. A equipe de engenharia **já identificou** o problema — portanto, não há como alegar desconhecimento. Aprovar o lançamento nessas condições seria uma decisão antiética e potencialmente ilegal.
+
+#### Cláusula 3.01 — Qualidade do Produto
+> *"Os engenheiros de software devem se esforçar para garantir que [...] os objetivos e metas de todos os projetos por eles aprovados sejam adequados para uso."*
+
+**Aplicação:** Um software de contratação que discrimina sistematicamente não é adequado para uso em produção. A cláusula 3.01 exige que os engenheiros defendam a qualidade do produto mesmo diante de pressões comerciais. Aceitar silenciosamente o lançamento comprometeria essa responsabilidade.
+
+### 2.2 Código de Ética de Sommerville (Cap. 1)
+
+Sommerville destaca que engenheiros de software têm **responsabilidades que vão além do empregador**, abrangendo a sociedade como um todo. Dois princípios se destacam:
+
+| Princípio | Aplicação ao Cenário |
+|---|---|
+| **Confidencialidade** | Os dados dos candidatos devem ser tratados com máximo cuidado; usá-los para reproduzir discriminação viola a confiança depositada no sistema. |
+| **Competência e Honestidade** | A equipe não deve aceitar ou encobrir trabalho que sabe estar abaixo dos padrões éticos e técnicos necessários. |
+| **Propriedade Intelectual e Uso Justo** | O uso de dados históricos enviesados sem tratamento adequado compromete o propósito legítimo do sistema. |
+| **Uso Indevido de Computadores** | Desenvolver ativamente um sistema que cause danos a terceiros — mesmo não intencionalmente — é uma forma de uso inadequado da tecnologia. |
+
+---
+
+## 3. Análise das Opções Técnicas
+
+### Comparativo Geral
+
+| Solução | Tempo de Implementação | Custo Estimado | Redução do Viés | Conformidade LGPD | Transparência |
+|---|---|---|---|---|---|
+| 🚀 Lançar como está | 0 semanas | Baixo (agora) | ❌ Nenhuma | ❌ Não | ❌ Não |
+| 👤 Human-in-the-loop | 1–2 semanas | Médio | ✅ Parcial | ✅ Parcial | ⚠️ Limitada |
+| 🔍 XAI (Explicabilidade) | 2–3 semanas | Médio-Alto | ⚠️ Indireta | ✅ Sim | ✅ Alta |
+| 🧹 Auditoria de Dados | 4 semanas | Médio | ✅ Alta | ✅ Sim | ✅ Alta |
+
+---
+
+### 3.1 Lançar como está (❌ Descartado)
+
+| ✅ Prós | ❌ Contras |
+|---|---|
+| Sem atraso no lançamento | Viola o Art. 20 da LGPD |
+| Satisfaz pressão imediata dos investidores | Risco de multas de até 2% do faturamento (LGPD, Art. 52) |
+| — | Danos reputacionais irreversíveis |
+| — | Discriminação ativa e documentada de candidatos |
+| — | Violação das cláusulas 1.03 e 3.01 do Código ACM/IEEE |
+
+> **Conclusão:** Inaceitável do ponto de vista ético e jurídico.
+
+---
+
+### 3.2 Human-in-the-loop (⚠️ Paliativo)
+
+| ✅ Prós | ❌ Contras |
+|---|---|
+| Implementação rápida (~1 semana) | Não elimina o viés — apenas adiciona uma camada humana |
+| Reduz risco jurídico imediato | Recrutador humano pode ser influenciado pelo ranking enviesado |
+| Mantém o lançamento próximo do prazo | Custos operacionais maiores com revisão humana contínua |
+| Atende parcialmente ao Art. 20 da LGPD | Expõe a empresa a críticas de "lavagem ética" |
+
+> **Conclusão:** Útil como medida **emergencial e transitória**, mas não suficiente como solução definitiva.
+
+---
+
+### 3.3 XAI — Toolkit de Explicabilidade (✅ Complementar)
+
+| ✅ Prós | ❌ Contras |
+|---|---|
+| Atende diretamente ao Art. 20 da LGPD | Expõe a lógica interna do produto (risco de concorrência) |
+| Aumenta confiança do usuário e do candidato | Não corrige o viés, apenas o torna visível |
+| Facilita auditorias futuras | Pode revelar publicamente a discriminação sistêmica |
+| Demonstra boa-fé em caso de processo judicial | Implementação exige esforço técnico considerável |
+
+> **Conclusão:** Excelente ferramenta de **transparência e governança**, mas deve ser combinada com a auditoria.
+
+---
+
+### 3.4 Auditoria de Dados — Limpeza Estatística (✅ Recomendado)
+
+| ✅ Prós | ❌ Contras |
+|---|---|
+| Ataca a raiz do problema (os dados) | Atraso de 4 semanas no lançamento |
+| Alta redução do viés sistêmico | Custo adicional de desenvolvimento |
+| Conformidade plena com a LGPD | Necessita de dados de qualidade para substituição |
+| Fortalece a qualidade técnica do produto | — |
+| Reduz risco de processos judiciais futuros | — |
+
+> **Conclusão:** É a solução mais robusta e sustentável a longo prazo.
+
+---
+
+## 4. Impacto Financeiro
+
+### Risco Jurídico (LGPD) vs. Custo do Atraso
+
+A LGPD (Lei nº 13.709/2018), em seu **Art. 52**, prevê sanções que podem chegar a **2% do faturamento bruto** da empresa no Brasil, limitadas a **R$ 50 milhões por infração**.
+
+| Cenário | Custo Estimado | Prazo |
+|---|---|---|
+| Lançamento imediato (com viés) | Multas LGPD + custos jurídicos + danos reputacionais = **potencialmente R$ milhões** | Impacto a partir do primeiro processo |
+| Atraso para Auditoria de Dados | Custo de 4 semanas de desenvolvimento + salários da equipe = **R$ dezenas de milhares** | 1 mês |
+| Implementar Human-in-the-loop | Custo de recrutadores adicionais por tempo indeterminado = **custo operacional contínuo** | Indefinido |
+
+> 💡 **Conclusão financeira:** O custo de **4 semanas de auditoria é ordens de grandeza menor** do que o custo potencial de um processo judicial coletivo por discriminação, sem contar os danos à imagem da startup perante investidores, parceiros e o mercado.
+
+---
+
+## 5. Nossa Proposta de Intervenção
+
+### Solução Integrada em 3 Fases
+
+Propomos uma abordagem **faseada**, que equilibra a pressão de mercado com a responsabilidade técnica e ética:
+
+```
+FASE 1 (Semana 1–2): Implementar Human-in-the-loop
+    ↓ Bloqueia o lançamento discriminatório imediato
+FASE 2 (Semana 2–4): Executar Auditoria de Dados + Limpeza Estatística
+    ↓ Corrige a raiz do problema
+FASE 3 (Semana 3–5): Adicionar camada XAI ao produto final
+    ↓ Garante transparência, explicabilidade e conformidade total com LGPD
+```
+
+### Justificativa da Proposta
+
+1. **Não lançar o produto com viés conhecido** é uma obrigação ética (Cláusulas 1.03 e 3.01 — ACM/IEEE) e legal (Art. 20 — LGPD).
+2. **Human-in-the-loop** como medida imediata demonstra boa-fé e reduz risco jurídico enquanto a correção estrutural ocorre.
+3. **Auditoria de Dados** ataca a raiz do problema com um custo-benefício claramente favorável frente ao risco jurídico.
+4. **XAI** posiciona o produto como referência de transparência no mercado — um **diferencial competitivo**, não apenas uma obrigação.
+
+### Comunicação com os Investidores
+
+Recomendamos comunicar aos investidores:
+- O atraso de 4–5 semanas é **preventivo e estratégico**;
+- O custo jurídico potencial de um lançamento precipitado pode **inviabilizar a empresa**;
+- Um produto eticamente sólido tem **maior valor de mercado e menor risco regulatório a longo prazo**.
+
+---
+
+## 6. Conclusão
+
+O dilema apresentado não é entre **ética e negócio** — é entre **risco de curto prazo e sustentabilidade de longo prazo**. Engenheiros de software têm responsabilidade não apenas com seus empregadores, mas com a sociedade que seu software impacta diretamente.
+
+> *"A pressão comercial nunca pode ser desculpa para a entrega de software que cause danos a pessoas reais."*  
+> — Princípio adaptado do Código de Ética de Sommerville, Cap. 1
+
+A nossa proposta integra as três soluções técnicas disponíveis em fases complementares, garantindo que o produto seja lançado de forma responsável, legal e competitiva.
+
+---
+
+*📁 Repositório: `semana-02/proposta-software.md`*  
+*🗓️ Atividade: O Dilema da IA Contratadora — Engenharia de Software*
