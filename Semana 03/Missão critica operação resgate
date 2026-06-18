@@ -1,0 +1,225 @@
+# 🚨 Missão Crítica: Operação Resgate — Chaos-IT
+
+> **Curso:** Tecnologia em Sistemas para Internet  
+> **Módulo:** 3  
+> **Componente Curricular:** Engenharia de Software  
+> **Professor:** Gaio B. Oliveira  
+> **Atividade:** Semana 03 — Modelo Espiral + Diagnóstico CMMI
+
+---
+
+## 📋 Sumário
+
+1. [Parte 1 — O Labirinto de Boehm: Modelo Espiral](#parte-1--o-labirinto-de-boehm-modelo-espiral)
+   - [Por que a Análise de Riscos teria salvado os drones?](#por-que-a-análise-de-riscos-teria-salvado-os-drones)
+   - [Ciclo da Espiral para o Projeto de IA Subaquática](#ciclo-da-espiral-para-o-projeto-de-ia-subaquática)
+2. [Parte 2 — Diagnóstico CMMI da Chaos-IT](#parte-2--diagnóstico-cmmi-da-chaos-it)
+   - [Nível Atual](#nível-atual)
+   - [Evidências do Diagnóstico](#evidências-do-diagnóstico)
+   - [Plano de Melhoria: Como chegar ao Nível 2](#plano-de-melhoria-como-chegar-ao-nível-2)
+3. [Conclusão Executiva](#conclusão-executiva)
+
+---
+
+## Parte 1 — O Labirinto de Boehm: Modelo Espiral
+
+### Por que a Análise de Riscos teria salvado os drones?
+
+O **Modelo Espiral** (Boehm, 1988), descrito por Sommerville no Capítulo 2, é um modelo orientado a risco. Diferente de modelos lineares como o Cascata, **cada volta da espiral começa com uma identificação explícita de riscos**, e o projeto só avança depois que esses riscos são tratados ou mitigados.
+
+No caso do projeto de drones da Chaos-IT, o colapso foi causado exatamente pela **ausência dessa prática**. Veja como a espiral teria agido em cada ponto crítico:
+
+| Risco Ignorado (Drones) | O que a Espiral Teria Feito |
+|---|---|
+| Falhas de comunicação entre drone e servidor em ambientes urbanos | Identificado na análise de risco da 1ª volta → protótipo de comunicação antes do desenvolvimento completo |
+| Ausência de plano de contingência para falha de sensor | Listado como risco crítico → requisito de redundância adicionado ao escopo |
+| Prazos irreais sem base em dados históricos | Detectado no quadrante de Planejamento → revisão de cronograma com base em protótipos anteriores |
+| Nenhum teste em ambiente real antes do lançamento | Risco de validação identificado → ciclo de testes em campo incluído antes da entrega |
+
+> 💡 **Conclusão:** A Análise de Riscos da Espiral cria um **portão obrigatório** entre cada fase. O projeto de drones nunca teria chegado à produção sem antes provar — com protótipos e evidências — que os riscos críticos estavam controlados. Sommerville afirma: *"A principal distinção do modelo espiral é a atenção explícita ao risco."* (Cap. 2)
+
+---
+
+### Ciclo da Espiral para o Projeto de IA Subaquática
+
+O diagrama abaixo representa **uma volta completa da espiral** aplicada ao novo projeto da Chaos-IT: um sistema de IA para controle de drones subaquáticos de entrega.
+
+```
+                        MODELO ESPIRAL — IA SUBAQUÁTICA
+                        ================================
+
+        QUADRANTE 1                    QUADRANTE 2
+        Determinação de                Identificação e
+        Objetivos e                    Análise de Riscos
+        Alternativas
+        ┌─────────────────────────────────────────────┐
+        │                                             │
+        │  • Definir escopo:          • RISCO 1:      │
+        │    navegação autônoma         Pressão e      │
+        │    subaquática                temperatura    │
+        │                               do hardware    │
+        │  • Alternativas:            • RISCO 2:      │
+        │    A) IA embarcada            Latência de    │
+        │    B) IA remota               comunicação    │
+        │    C) Híbrido                 subaquática    │
+        │                                             │
+        │  • Restrições:              • RISCO 3:      │
+        │    - Orçamento               Falha de        │
+        │    - Regulação               sensores de     │
+        │    - Prazo 18 meses          profundidade    │
+        │                                             │
+        └──────────────────┬──────────────────────────┘
+                           │
+                  [ANÁLISE DE RISCO]
+                  Prosseguir? Ajustar?
+                           │
+        ┌──────────────────┴──────────────────────────┐
+        │                                             │
+        │  • Desenvolver              • Testes em     │
+        │    MVP: módulo de             tanque         │
+        │    navegação básica           controlado     │
+        │                                             │
+        │  • Protótipo de             • Validação de  │
+        │    comunicação               latência de    │
+        │    subaquática               sinal          │
+        │                                             │
+        │  • Revisão com              • Aprovação     │
+        │    stakeholders               do cliente    │
+        │    e reguladores              antes da       │
+        │                               próxima volta │
+        └─────────────────────────────────────────────┘
+        QUADRANTE 4                    QUADRANTE 3
+        Planejamento da                Desenvolvimento
+        Próxima Volta                  e Validação
+```
+
+#### Detalhamento de cada Quadrante
+
+**🔵 Quadrante 1 — Determinação de Objetivos e Alternativas**
+
+Nesta fase, a equipe define **o que** o sistema deve fazer nesta volta, quais são as restrições e quais alternativas de solução existem.
+
+- **Objetivo desta volta:** Provar que é tecnicamente viável uma IA navegar de forma autônoma em ambiente subaquático a até 30 metros de profundidade.
+- **Alternativas avaliadas:**
+  - IA totalmente embarcada no drone (sem dependência de rede)
+  - IA remota com comunicação acústica subaquática
+  - Modelo híbrido: decisões simples embarcadas, complexas remotas
+- **Restrições:** Orçamento de R$ 2 milhões, prazo de 18 meses, conformidade com regulação da ANATEL e Marinha.
+
+---
+
+**🔴 Quadrante 2 — Identificação e Análise de Riscos**
+
+Este é o **coração do modelo espiral**. Todo risco técnico, de negócio e operacional é listado, avaliado por probabilidade e impacto, e tem uma estratégia de mitigação definida **antes** de qualquer desenvolvimento.
+
+| # | Risco | Probabilidade | Impacto | Mitigação |
+|---|---|---|---|---|
+| 1 | Hardware falha sob pressão hidrostática | Alta | Crítico | Testar componentes em câmara de pressão antes do desenvolvimento |
+| 2 | Latência de comunicação acústica inviabiliza IA em tempo real | Média | Crítico | Prototipar módulo de comunicação isoladamente na 1ª volta |
+| 3 | Falha de sensores de profundidade e orientação | Alta | Alto | Exigir redundância dupla nos sensores desde o MVP |
+| 4 | Regulação proibir operação em águas federais | Baixa | Crítico | Consultar Marinha e ANATEL antes do início do desenvolvimento |
+| 5 | Equipe sem experiência em sistemas embarcados subaquáticos | Alta | Alto | Contratar especialista ou firmar parceria com laboratório de robótica |
+
+---
+
+**🟢 Quadrante 3 — Desenvolvimento e Validação**
+
+Com os riscos mapeados e mitigados (ou aceitos conscientemente), o desenvolvimento ocorre de forma **incremental e validada**:
+
+- Desenvolvimento do **módulo de navegação básica** (MVP limitado)
+- Implementação do **protótipo de comunicação acústica** subaquática
+- Testes em ambiente controlado (tanque de 10m de profundidade)
+- Validação de latência, precisão de navegação e resistência do hardware
+- Revisão técnica com stakeholders e órgãos regulatórios
+
+---
+
+**🟡 Quadrante 4 — Planejamento da Próxima Volta**
+
+Com base nos resultados dos testes e no feedback dos stakeholders, a equipe planeja a próxima iteração da espiral:
+
+- Documentar lições aprendidas e novos riscos descobertos
+- Decidir entre as alternativas com base em dados reais do protótipo
+- Ajustar cronograma e orçamento para a próxima volta
+- Definir critérios de sucesso da próxima iteração (ex: navegação autônoma a 50m, integração com sistema logístico)
+
+> ✅ **A espiral só avança quando a diretoria e a equipe técnica aprovam os resultados da volta anterior.** Isso impede que o projeto chegue à produção com riscos críticos não tratados — exatamente o que derrubou os drones.
+
+---
+
+## Parte 2 — Diagnóstico CMMI da Chaos-IT
+
+### Nível Atual
+
+> **A Chaos-IT está no Nível 1 — INICIAL (Caótico)**
+
+### Evidências do Diagnóstico
+
+O CMMI (Capability Maturity Model Integration) define 5 níveis de maturidade de processos. O diagnóstico da Chaos-IT é baseado nas evidências descritas e na definição de cada nível segundo Sommerville (Cap. 2):
+
+| Característica do Nível 1 (Inicial) | Evidência na Chaos-IT |
+|---|---|
+| Processos imprevisíveis e mal controlados | *"Cada desenvolvedor trabalha do seu jeito"* — ausência de padronização |
+| Sucesso dependente de esforço individual heroico | *"Sucesso depende exclusivamente do esforço heróico de alguns devs"* |
+| Sem registro ou uso de dados históricos | *"Não há registro de erros passados"* |
+| Estimativas sem base empírica | *"Os prazos são chutados"* |
+| Alta variabilidade nos resultados | Projeto de drones falhou sem previsão |
+
+> ⚠️ **No Nível 1, o processo é basicamente a pessoa, não a organização.** Se os "devs heróicos" saírem da empresa, todo o conhecimento vai embora com eles. Isso é exatamente o que o CMMI chama de **processo ad hoc**: funciona às vezes, por acidente ou esforço excepcional, mas não de forma repetível.
+
+---
+
+### Plano de Melhoria: Como chegar ao Nível 2
+
+O **Nível 2 — GERENCIADO** exige que a organização seja capaz de repetir sucessos anteriores em novos projetos. Para isso, os processos precisam ser planejados, documentados, executados e monitorados.
+
+#### O que o Nível 2 exige (segundo o CMMI):
+
+| Área de Processo | O que a Chaos-IT precisa implementar |
+|---|---|
+| **Gerenciamento de Requisitos** | Registrar, versionar e rastrear todos os requisitos de cada projeto |
+| **Planejamento de Projetos** | Estimar prazos com base em dados históricos (velocity, story points) — não mais "chutes" |
+| **Monitoramento e Controle** | Acompanhar progresso real vs. planejado com métricas semanais |
+| **Gerenciamento de Configuração** | Usar Git com branches, pull requests e política de versionamento obrigatória |
+| **Garantia de Qualidade** | Criar checklists mínimos de revisão de código e testes antes de qualquer entrega |
+| **Gestão de Acordos com Fornecedores** | Formalizar contratos e critérios de aceite com clientes e fornecedores |
+
+#### Plano de Ação Prático (0 → Nível 2 em 6 meses):
+
+```
+MÊS 1-2: Fundação
+├── Implementar Git obrigatório com política de branches
+├── Criar template padrão de registro de requisitos
+└── Definir Definition of Done (DoD) mínima para todas as equipes
+
+MÊS 3-4: Processo
+├── Implantar dailies e retrospectivas quinzenais
+├── Começar a registrar erros e bugs em sistema centralizado (ex: Jira, GitHub Issues)
+└── Criar base de dados de estimativas por tipo de tarefa
+
+MÊS 5-6: Monitoramento
+├── Produzir relatório de progresso semanal por projeto
+├── Revisar estimativas com base nos dados coletados
+└── Realizar primeira auditoria interna de aderência ao processo
+```
+
+> 💡 **Ponto-chave:** O objetivo do Nível 2 não é burocracia — é **previsibilidade**. A Chaos-IT precisa ser capaz de dizer "nosso próximo projeto vai levar X semanas e custar Y reais" e estar **certa** na maioria das vezes.
+
+---
+
+## Conclusão Executiva
+
+| Diagnóstico | Situação Atual | Meta |
+|---|---|---|
+| **Modelo de Processo** | Nenhum (ad hoc) | Modelo Espiral com gestão de riscos |
+| **Maturidade CMMI** | Nível 1 — Inicial | Nível 2 — Gerenciado (6 meses) |
+| **Gestão de Riscos** | Inexistente | Análise formal em cada iteração |
+| **Estimativas** | "Chutes" | Baseadas em dados históricos |
+| **Conhecimento organizacional** | Dependente de heróis | Documentado e institucionalizado |
+
+A Chaos-IT não falhou por falta de talento técnico — falhou por falta de **processo**. O Modelo Espiral garante que riscos sejam tratados antes de virar catástrofes, e o CMMI Nível 2 garante que os sucessos possam ser repetidos. Juntos, esses dois frameworks transformam a empresa de uma operação dependente de sorte e horas extras em uma **organização de engenharia de software profissional**.
+
+---
+
+*📁 Repositório: `semana-03/missao-critica-operacao-resgate.md`*  
+*🗓️ Atividade: Missão Crítica — Modelo Espiral + Diagnóstico CMMI*
