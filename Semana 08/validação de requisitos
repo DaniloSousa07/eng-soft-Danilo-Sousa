@@ -1,0 +1,119 @@
+# 💬 Validação de Requisitos — Conversa com o Sr. Geraldo
+
+> **Data:** 02/05/2026  
+> **Participantes:** Danilo (Analista) e Sr. Geraldo (Proprietário — simulado por IA)  
+> **Objetivo:** Validar os Requisitos Funcionais levantados no documento ERS v1.0  
+> **Formato:** Entrevista de validação (presencial simulada)
+
+---
+
+## Registro da Conversa
+
+---
+
+**Danilo:** Bom dia, Sr. Geraldo! Preparei o documento com todos os requisitos que levantamos na nossa primeira conversa. Gostaria de passar por cada módulo com o senhor para garantir que está tudo correto antes de começarmos a desenvolver. Podemos começar?
+
+**Sr. Geraldo:** Bom dia, Danilo! Claro, pode ir falando. Tô aqui pra isso.
+
+---
+
+**Danilo:** Ótimo. Começando pelo **cadastro de hóspedes** — defini que o sistema vai pedir Nome completo, CPF e Telefone. E se o mesmo CPF já existir, o sistema bloqueia o cadastro duplicado. Está correto?
+
+**Sr. Geraldo:** Sim, isso tá certo. O CPF é importante porque às vezes o mesmo hóspede volta, né? Seria bom que o sistema reconhecesse ele e já trouxesse os dados automaticamente na próxima vez.
+
+**Danilo:** Perfeito, vou registrar isso! Vou adicionar como RF02 revisado: ao fazer uma reserva, se o CPF já estiver cadastrado, o sistema deve sugerir os dados do hóspede existente. Faz sentido?
+
+**Sr. Geraldo:** Exatamente isso! Muito bom.
+
+---
+
+**Danilo:** Sobre os **quartos**, defini três categorias: Simples, Suíte Luxo e Quarto Família — cada um com seu preço de diária. O senhor poderá configurar os valores. Está assim?
+
+**Sr. Geraldo:** Está sim. Mas me diz uma coisa — e se eu quiser fazer uma promoção, tipo cobrar menos numa semana específica? Dá pra fazer isso?
+
+**Danilo:** É uma boa observação. Por enquanto isso estava fora do escopo inicial, mas posso registrar como uma **melhoria futura** para a versão 2.0. Para não atrasar o desenvolvimento agora, o senhor concorda em começar com preço fixo por categoria e depois a gente adiciona essa funcionalidade?
+
+**Sr. Geraldo:** Tudo bem, pode deixar pra depois. Desde que fique registrado, tô satisfeito.
+
+**Danilo:** Registrado. ✅
+
+---
+
+**Danilo:** No **Mapa de Ocupação**, os quartos vão aparecer com três cores: verde para livre, vermelho para ocupado e amarelo para "em limpeza". Isso resolve o que o senhor precisava?
+
+**Sr. Geraldo:** Resolve sim! Só tenho uma dúvida — quando eu clico num quarto no mapa, eu consigo ver quem tá hospedado lá? O nome do hóspede e até quando fica?
+
+**Danilo:** Não tinha previsto isso explicitamente, mas é uma ótima adição. Vou incluir como **RF07 revisado**: ao clicar em um quarto com status "Ocupado" no mapa, o sistema deve exibir nome do hóspede, data de check-in e data prevista de checkout.
+
+**Sr. Geraldo:** Isso sim! Muito mais útil.
+
+---
+
+**Danilo:** Sobre o **consumo extra** — frigobar, lanches — o recepcionista vai poder lançar os itens durante a estadia, e o sistema soma automaticamente na conta. E o checkout só fecha quando tudo estiver confirmado. Correto?
+
+**Sr. Geraldo:** Correto. Só queria saber: tem como eu ver o que foi consumido separado da diária no momento do checkout? Tipo, mostrar "Hospedagem: R$ 300,00 | Consumo: R$ 45,00 | Total: R$ 345,00"?
+
+**Danilo:** Com certeza. Vou detalhar isso no critério de aceitação: a tela de checkout deve exibir o valor da hospedagem e o valor do consumo extra separadamente, com o total consolidado.
+
+**Sr. Geraldo:** Perfeito. Bem mais claro pro hóspede também.
+
+---
+
+**Danilo:** Sobre os **alertas de limpeza** — após o checkout, o sistema avisa automaticamente quais quartos precisam de limpeza. E a camareira confirma quando terminar, aí o quarto vira "Livre". Isso está correto?
+
+**Sr. Geraldo:** Está correto. Mas esse aviso... vai aparecer onde? Na tela da camareira? Porque aqui quem faz a limpeza não fica sempre no computador.
+
+**Danilo:** Boa pergunta. Por ora, o alerta vai aparecer numa tela de painel interna do sistema, que a camareira acessa quando conveniente. Uma notificação por WhatsApp ou celular ficaria para uma versão futura, tudo bem?
+
+**Sr. Geraldo:** Tudo bem. Por enquanto tá ótimo assim.
+
+---
+
+**Danilo:** Por último, o **relatório financeiro** — vai mostrar o total de reservas, faturamento bruto e receita de consumo extra, com filtro por mês e ano. Está de acordo?
+
+**Sr. Geraldo:** Está sim. Eu precisava muito disso porque hoje eu faço tudo no caderno e sempre erro. Só me diz — esse relatório dá pra imprimir ou salvar em PDF?
+
+**Danilo:** Vou adicionar isso: o relatório deve ter a opção de exportar em PDF. Vou incluir como **RF15 revisado**.
+
+**Sr. Geraldo:** Ótimo, Danilo. Você foi muito cuidadoso. Acho que ficou bem completo.
+
+---
+
+## ✅ Resultado da Validação
+
+| Módulo | Status | Observações |
+|:---|:---:|:---|
+| Cadastro de Hóspedes | ✅ Aprovado | Incluir reconhecimento automático de CPF já cadastrado |
+| Quartos e Categorias | ✅ Aprovado | Preço promocional registrado como melhoria futura (v2.0) |
+| Mapa de Ocupação | ✅ Aprovado com ajuste | Adicionar painel de detalhes ao clicar no quarto |
+| Consumo Extra e Conta | ✅ Aprovado com ajuste | Tela de checkout deve exibir breakdown separado (hospedagem + consumo) |
+| Alertas de Limpeza | ✅ Aprovado | Notificação via WhatsApp registrada como melhoria futura |
+| Relatório Financeiro | ✅ Aprovado com ajuste | Adicionar exportação do relatório em PDF |
+
+---
+
+## 📝 Requisitos Adicionados/Ajustados na Validação
+
+| ID | Descrição | Origem |
+|:---:|:---|:---|
+| RF02 (rev.) | Ao informar CPF já cadastrado, o sistema sugere os dados do hóspede existente automaticamente | Solicitação do Sr. Geraldo |
+| RF07 (rev.) | Ao clicar em quarto "Ocupado" no mapa, exibir nome do hóspede, check-in e checkout previstos | Solicitação do Sr. Geraldo |
+| RF10 (rev.) | A tela de checkout deve exibir hospedagem e consumo separados, com total consolidado | Solicitação do Sr. Geraldo |
+| RF15 (rev.) | O relatório financeiro deve permitir exportação em PDF | Solicitação do Sr. Geraldo |
+
+## 🔮 Melhorias Registradas para Versão Futura (v2.0)
+
+- Preços promocionais por período para quartos
+- Notificação de limpeza via WhatsApp ou aplicativo mobile
+
+---
+
+**Assinatura de aprovação do cliente:**
+
+> *"Danilo, você foi muito cuidadoso. Acho que ficou bem completo."*  
+> — Sr. Geraldo, 02/04/2026
+
+---
+
+*📁 Repositório: `semana-04/validacao-sr-geraldo.md`*  
+*🗓️ Atividade: Validação de Requisitos — Engenharia de Software*
